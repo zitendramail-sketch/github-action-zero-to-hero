@@ -27,7 +27,7 @@ jobs:
     steps:
       
       - name: check the python version
-        run: pyhton --version
+        run: python --version
 
       - name: check the docker version
         run: docker --version
