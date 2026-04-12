@@ -1,0 +1,32 @@
+# name the this workflow is portfolio.yml
+
+name: portfolio
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+
+    deploy:
+
+        runs-on: ubuntu-latest
+
+        steps:
+
+            - name: checkout code
+              run: actions/checkout@v4
+
+            
+            - name: Setup github pages
+              run: actions/configure-pages@v4
+
+            - name: upload statci files
+              run: actions/upload-pages-artifact@v4
+              with:
+                path: "."
+
+            - name: deploy to Github pages
+              id: deployment
+              uses: actions/deploy-pages@v4
