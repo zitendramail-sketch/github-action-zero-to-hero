@@ -24,8 +24,7 @@ jobs:
 
             - name: upload statci files
               run: actions/upload-pages-artifact@v4
-              with:
-                path: "."
+
 
             - name: deploy to Github pages
               id: deployment
